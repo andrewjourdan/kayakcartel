@@ -74,3 +74,12 @@ No outfitter, dealer, manufacturer, brand or social media platform has agreed to
 ### No warranty
 
 This website and repository are provided "as is," without warranties of any kind. All features, programs and plans described are proposed and subject to change or cancellation.
+
+
+## Maintenance and checks
+
+Canonical URL: https://kayakcartel.com/. Preserve CNAME. Run `python3 scripts/check_site.py` before submitting a pull request; GitHub Actions runs the same check for metadata, local links, sitemap, robots and preview disclosures.
+
+The booking search is a preview. The dealer form prepares an email information request; nothing is sent until the visitor sends the email. Neither action creates a reservation, application or territory agreement.
+
+Review mobile and desktop layouts and email links before publishing. Main requires pull requests and Site checks, and force pushes and deletion should remain blocked. Domain transfer lock, auto-renewal, DNSSEC, GitHub Pages domain verification and delivery to the three published mailboxes require separate verification.

@@ -191,6 +191,14 @@ footer .sign { font-family: var(--f-display); font-size: clamp(1.4rem, 3vw, 2rem
 footer .sign span { color: var(--paddle); }
 footer small { font-size: 0.9rem; }
 </style>
+<link rel="canonical" href="https://kayakcartel.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kayak Cartel">
+<meta property="og:url" content="https://kayakcartel.com/">
+<meta property="og:description" content="A proposed national crew of paddle outfitters. Every Shoreline. Every State. One Crew.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kayak Cartel">
+<meta name="twitter:description" content="Explore the proposed paddle outfitter network and register interest.">
 </head>
 <body>
 <!-- ================= HEADER ================= -->
@@ -309,7 +317,7 @@ footer small { font-size: 0.9rem; }
         </div>
         <button class="btn btn-red" type="submit">Search the crew</button>
       </form>
-      <p id="bookMsg" class="notice">This is a preview of the network booking system. Live availability opens as dealers join the crew.</p>
+      <p id="bookMsg" class="notice" role="status" aria-live="polite">This is a preview of the network booking system. Live availability opens as dealers join the crew.</p>
     </div>
   </div>
 </section>
@@ -369,7 +377,8 @@ footer small { font-size: 0.9rem; }
         </ul>
       </div>
 
-      <form class="dealer-form" id="dealerForm" novalidate>
+      <p class="notice">This form prepares an information request in your email app. Nothing is sent until you send that email. It does not submit an application or reserve a territory.</p>
+<form class="dealer-form" id="dealerForm" novalidate>
         <h3>Claim your water</h3>
         <div class="row">
           <div class="field"><label for="dName">Business name</label><input id="dName" type="text" autocomplete="organization" placeholder="Sample: Riverbend Paddle Co."></div>
