@@ -1,7 +1,4 @@
-# robots.txt for www.kayakcartel.com
-# Allow all search engines to crawl the whole site.
-
 User-agent: *
 Allow: /
 
-Sitemap: https://www.kayakcartel.com/sitemap.xml
+Sitemap: https://kayakcartel.com/sitemap.xml
