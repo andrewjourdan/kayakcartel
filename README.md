@@ -1,5 +1,16 @@
 # Kayak Cartel
 
+## What the owner needs to know
+
+The website runs on GitHub Pages. You do not need to run commands to keep it online.
+The preview and validation commands are for whoever makes website changes.
+
+- Keep the domain registration renewed and account recovery details current.
+- After changes, review the live site on a phone and computer and report broken links or missing inquiries promptly.
+- The booking search is a preview. The dealer form prepares an email; the visitor must send it. Test delivery to join@kayakcartel.com, session@kayakcartel.com and sponsorship@kayakcartel.com.
+
+Developer instructions: see [For developers](#for-developers) below.
+
 **Every Shoreline. Every State. One Crew.**
 
 **Website:** [kayakcartel.com](https://kayakcartel.com)
@@ -76,7 +87,22 @@ No outfitter, dealer, manufacturer, brand or social media platform has agreed to
 This website and repository are provided "as is," without warranties of any kind. All features, programs and plans described are proposed and subject to change or cancellation.
 
 
-## Maintenance and checks
+## For developers
+
+### Local preview
+
+Use Python 3.12 or newer for the documented commands. This static site has no package installation or build step.
+From the repository root, run:
+
+```sh
+python3 -m http.server 8000
+```
+
+Open http://localhost:8000/; stop the preview with Ctrl+C.
+An internet connection is needed for externally loaded fonts.
+
+### Validation and publishing
+
 
 Canonical URL: https://kayakcartel.com/. Preserve CNAME. Run `python3 scripts/check_site.py` before submitting a pull request; GitHub Actions runs the same check for metadata, local links, sitemap, robots and preview disclosures.
 
