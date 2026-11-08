@@ -1,4 +1,4 @@
-"""Validate metadata, local navigation, publishing files and countdown targets."""
+"""Validate metadata, local navigation, publishing files, disclosures and the legal notice."""
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
@@ -24,7 +24,7 @@ paths=["index.html"]
 texts={p:(ROOT/p).read_text() for p in paths}
 pages={p:Page(t) for p,t in texts.items()}
 for path, page in pages.items():
-    expected="https://kayakcartel.com/"+("patronage/" if path.startswith("patronage") else "")
+    expected="https://kayakcartel.com/"
     assert page.title and page.meta.get("description"), path+": missing metadata"
     assert page.canonical==[expected], path+": incorrect canonical"
     assert page.meta.get("og:url")==expected and page.meta.get("og:title") and page.meta.get("twitter:card"), path+": missing share metadata"
@@ -45,4 +45,6 @@ urls={n.text for n in ET.parse(ROOT/"sitemap.xml").findall(".//{http://www.sitem
 assert urls=={"https://kayakcartel.com/"}
 assert 'Booking preview' in texts["index.html"] and 'This search is a preview' in texts["index.html"], "Keep booking preview disclosure"
 assert 'Nothing is sent until you send that email' in texts["index.html"], "Keep email submission disclosure"
-print("PASS: both pages, local links, metadata, publishing files and countdown targets")
+assert "not a registered corporation" in texts["index.html"] and "belong to Andrew Jourdan" in texts["index.html"], "Keep the on-page legal notice (unregistered business, domain ownership)"
+assert "Nothing on this site is an offer to sell a franchise" in texts["index.html"], "Keep the franchise no-offer disclaimer"
+print("PASS: page, local links, metadata, publishing files, preview disclosures and legal notice")
